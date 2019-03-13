@@ -1,0 +1,17 @@
+bunga<-function(num,At,k,t, m=TRUE){
+  #num=pilihan, 1: bunga tunggal
+  #             2: bunga majemuk nominal
+  #             3: bunga majemuk kontinu
+  #At=nilai akumulasi
+  #t=tahun
+  switch(num,
+         satu={
+           bunga=(At/k-1)/t
+         },
+         dua={
+           bunga=m*((At/k)^(1/(m*t))-1)
+         },
+         tiga={
+           bunga=log(At/k)/t
+         })
+  return(bunga)}
